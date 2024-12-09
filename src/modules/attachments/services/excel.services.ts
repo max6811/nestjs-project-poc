@@ -1,5 +1,4 @@
-import { Injectable, Logger } from '@nestjs/common';
-import * as ExcelJS from 'exceljs';
+import { Injectable } from '@nestjs/common';
 
 import { ApplicationExceptions } from '../../../common/utils/exceptions/application.exceptions';
 
