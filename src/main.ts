@@ -13,7 +13,6 @@ async function bootstrap() {
     origin: mtOrigin,
     allowedHeaders: [
       'Content-Type',
-      'Authorization',
       'Set-Cookie',
       'Access-Control-Allow-Origin',
       'Cache-Control',
