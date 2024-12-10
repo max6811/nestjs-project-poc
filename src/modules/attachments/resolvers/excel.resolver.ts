@@ -12,4 +12,10 @@ export class ExcelFilesResolver {
     Logger.log('start download');
     return this.excelFilesService.getGeneratedStyledExcel(context.user);
   }
+
+  @Query(() => String)
+  async getName(@Context() context): Promise<string> {
+    Logger.log('start get', context);
+    return 'Developer back';
+  }
 }
