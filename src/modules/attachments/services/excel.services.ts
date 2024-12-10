@@ -8,12 +8,11 @@ export class ExcelFilesService {
   constructor(private exception: ApplicationExceptions) {}
 
   async getGeneratedStyledExcel(user: string): Promise<string> {
-    console.log(user);
+    Logger.log(user);
 
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('Factura');
 
-    // Título
     worksheet.mergeCells('A1:D1');
     const titleCell = worksheet.getCell('A1');
     titleCell.value = 'Factura';
@@ -64,6 +63,8 @@ export class ExcelFilesService {
 
     const buffer = await workbook.xlsx.writeBuffer();
     const base64 = Buffer.from(buffer).toString('base64');
+    Logger.warn('end service');
+    Logger.warn(base64);
     return base64;
   }
 }
