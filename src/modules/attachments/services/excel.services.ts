@@ -63,7 +63,7 @@ export class ExcelFilesService {
 
     const buffer = await workbook.xlsx.writeBuffer();
     const base64 = Buffer.from(buffer).toString('base64');
-    Logger.warn('end service');
+    Logger.warn('end service...');
     Logger.warn(base64);
     return base64;
   }
